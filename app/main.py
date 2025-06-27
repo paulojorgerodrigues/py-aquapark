@@ -38,19 +38,7 @@ class Visitor:
 class SlideLimitationValidator(ABC):
     @abstractmethod
     def __init__(self, age: int, height: int, weight: int) -> None:
-        self.age = age
-        self.height = height
-        self.weight = weight
-
-    def __set_name__(self, owner: object, name: str) -> None:
-        self.protected_name = "_" + name
-
-    def __get__(self, obj: object, objtype: object = None) -> object:
-        return getattr(obj, self.protected_name)
-
-    def __set__(self, obj: object, value: object) -> None:
-        setattr(obj, self.protected_name, value)
-
+        pass
 
 class ChildrenSlideLimitationValidator(SlideLimitationValidator):
     age = IntegerRange(4, 14)

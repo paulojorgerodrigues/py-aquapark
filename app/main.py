@@ -40,6 +40,7 @@ class SlideLimitationValidator(ABC):
     def __init__(self, age: int, height: int, weight: int) -> None:
         pass
 
+
 class ChildrenSlideLimitationValidator(SlideLimitationValidator):
     age = IntegerRange(4, 14)
     height = IntegerRange(80, 120)
